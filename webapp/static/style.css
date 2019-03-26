@@ -1,0 +1,37 @@
+body {
+    background-color: #9966CC;
+}
+.container {
+	margin-left: 180px;
+    margin-right: 100px;
+    margin-top: 100px;
+	height:400px;
+	width:1088px;	
+}
+.playerStatColumn {
+    background-color: #CCCCCC;
+	border:#003399;
+	border:2px;
+	float:left;
+	positon: relative;
+	padding:5px
+}
+.resultColumn {
+	padding:9px;
+    background-color: #FFFFFF;
+	width:550px;
+	float:left;
+	border-width:2px;
+	border-color:#000000;
+	overflow: scroll;
+	height:492px;
+}
+.stat {
+	margin-left:30px;
+	padding:1px;
+}
+.submitArea {
+	width:450px;
+	margin-left:400px;
+	background-color: #CC0000;
+}
