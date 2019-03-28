@@ -5,11 +5,11 @@ body {
 	background-size:100%;
 }
 .container {
-	margin-left: 400px;
-    margin-right: 200px;
+	margin-left: 150px;
+    margin-right: 150px;
     margin-top: 100px;
 	height:400px;
-	width:1400px;
+	width:1200px;
 }
 .playerStatColumn {
     background-color: #E07F57;
