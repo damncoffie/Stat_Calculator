@@ -7,85 +7,85 @@
 </head>
 <body>
 <div class="container">
-    <form name="calculateForm" method="POST" action="/doIt">
+    <form name="calculateForm" method="POST" action="/calculate">
         <!-- First player stats -->
         <div class="playerStatColumn">
             <table align="center" style="height:500px">
                 <tr>
                     <td class="stat">Хит пойнтс</td>
-                    <td><input name="fpHitPoints" type="text" size="3px"></td>
+                    <td><input name="fpHitPoints" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Пики</td>
-                    <td><input name="fpSpades" type="text" size="3px"></td>
+                    <td><input name="fpSpades" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Защита</td>
-                    <td><input name="fpDefence" type="text" size="3px"></td>
+                    <td><input name="fpDefence" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний урон</td>
-                    <td><input name="fpRangeDamage" type="text" size="3px"></td>
+                    <td><input name="fpRangeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальние атаки</td>
-                    <td><input name="fpRangeAttacks" type="text" size="3px"></td>
+                    <td><input name="fpRangeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний мод.</td>
-                    <td><input name="fpRangeMod" type="text" size="3px"></td>
+                    <td><input name="fpRangeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний урон</td>
-                    <td><input name="fpCloseDamage" type="text" size="3px"></td>
+                    <td><input name="fpCloseDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближние атаки</td>
-                    <td><input name="fpCloseAttacks" type="text" size="3px"></td>
+                    <td><input name="fpCloseAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний мод.</td>
-                    <td><input name="fpCloseMod" type="text" size="3px"></td>
+                    <td><input name="fpCloseMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный урон</td>
-                    <td><input name="fpMeleeDamage" type="text" size="3px"></td>
+                    <td><input name="fpMeleeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашные атаки</td>
-                    <td><input name="f pMeleeAttacks" type="text" size="3px"></td>
+                    <td><input name="fpMeleeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный мод.</td>
-                    <td><input name="fpMeleeMod" type="text" size="3px"></td>
+                    <td><input name="fpMeleeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 1 раунд</td>
                     <td>
-                        <select>
-                            <option name="fpWeapon1" value="Range">Дальний</option>
-                            <option name="fpWeapon1" value="Close">Ближний</option>
-                            <option name="fpWeapon1" value="Melee">Рукопашный</option>
+                        <select name="fpWeapon1">
+                            <option value="Range">Дальний</option>
+                            <option value="Close">Ближний</option>
+                            <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 2 раунд</td>
                     <td>
-                        <select>
-                            <option name="fpWeapon2" value="Range">Дальний</option>
-                            <option name="fpWeapon2" value="Close">Ближний</option>
-                            <option name="fpWeapon2" value="Melee">Рукопашный</option>
+                        <select name="fpWeapon2">
+                            <option value="Range">Дальний</option>
+                            <option value="Close">Ближний</option>
+                            <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 3 раунд</td>
                     <td>
-                        <select>
-                            <option name="fpWeapon3" value="Range">Дальний</option>
-                            <option name="fpWeapon3" value="Close">Ближний</option>
-                            <option name="fpWeapon3" value="Melee">Рукопашный</option>
+                        <select name="fpWeapon3">
+                            <option value="Range">Дальний</option>
+                            <option value="Close">Ближний</option>
+                            <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
 
@@ -93,10 +93,10 @@
                 <tr>
                     <td class="stat">Тактика 1 раунд</td>
                     <td>
-                        <select>
-                            <option name="fpTactic1" value="Agressive">Агрессия</option>
-                            <option name="fpTactic1" value="Careful">Осторожность</option>
-                            <option name="fpTactic1" value="Deception">Обман</option>
+                        <select name="fpTactic1">
+                            <option value="Aggressive">Агрессия</option>
+                            <option value="Careful">Осторожность</option>
+                            <option value="Deception">Обман</option>
                         </select>
                     </td>
 
@@ -104,10 +104,10 @@
                 <tr>
                     <td class="stat">Тактика 2 раунд</td>
                     <td>
-                        <select>
-                            <option name="fpTactic2" value="Agressive">Агрессия</option>
-                            <option name="fpTactic2" value="Careful">Осторожность</option>
-                            <option name="fpTactic2" value="Deception">Обман</option>
+                        <select name="fpTactic2">
+                            <option value="Aggressive">Агрессия</option>
+                            <option value="Careful">Осторожность</option>
+                            <option value="Deception">Обман</option>
                         </select>
                     </td>
 
@@ -115,10 +115,10 @@
                 <tr>
                     <td class="stat">Тактика 3 раунд</td>
                     <td>
-                        <select>
-                            <option name="fpTactic3" value="Agressive">Агрессия</option>
-                            <option name="fpTactic3" value="Careful">Осторожность</option>
-                            <option name="fpTactic3" value="Deception">Обман</option>
+                        <select name="fpTactic3">
+                            <option value="Aggressive">Агрессия</option>
+                            <option value="Careful">Осторожность</option>
+                            <option value="Deception">Обман</option>
                         </select>
                     </td>
                 </tr>
@@ -161,109 +161,109 @@
             <table align="center" style="height:500px">
                 <tr>
                     <td class="stat">Хит пойнтс</td>
-                    <td><input name="spHitPoints" type="text" size="3px"></td>
+                    <td><input name="spHitPoints" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Пики</td>
-                    <td><input name="spSpades" type="text" size="3px"></td>
+                    <td><input name="spSpades" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Защита</td>
-                    <td><input name="spDefence" type="text" size="3px"></td>
+                    <td><input name="spDefence" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний урон</td>
-                    <td><input name="spRangeDamage" type="text" size="3px"></td>
+                    <td><input name="spRangeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальние атаки</td>
-                    <td><input name="spRangeAttacks" type="text" size="3px"></td>
+                    <td><input name="spRangeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний мод.</td>
-                    <td><input name="spRangeMod" type="text" size="3px"></td>
+                    <td><input name="spRangeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний урон</td>
-                    <td><input name="spCloseDamage" type="text" size="3px"></td>
+                    <td><input name="spCloseDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближние атаки</td>
-                    <td><input name="spCloseAttacks" type="text" size="3px"></td>
+                    <td><input name="spCloseAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний мод.</td>
-                    <td><input name="spCloseMod" type="text" size="3px"></td>
+                    <td><input name="spCloseMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный урон</td>
-                    <td><input name="spMeleeDamage" type="text" size="3px"></td>
+                    <td><input name="spMeleeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашные атаки</td>
-                    <td><input name="spMeleeAttacks" type="text" size="3px"></td>
+                    <td><input name="spMeleeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный мод.</td>
-                    <td><input name="spMeleeMod" type="text" size="3px"></td>
+                    <td><input name="spMeleeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 1 раунд</td>
                     <td>
-                        <select>
-                            <option name="spWeapon1" value="Range">Дальний</option>
-                            <option name="spWeapon1" value="Close">Ближний</option>
-                            <option name="spWeapon1" value="Melee">Рукопашный</option>
+                        <select name="spWeapon1">
+                            <option value="Range">Дальний</option>
+                            <option value="Close">Ближний</option>
+                            <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 2 раунд</td>
                     <td>
-                        <select>
-                            <option name="spWeapon2" value="Range">Дальний</option>
-                            <option name="spWeapon2" value="Close">Ближний</option>
-                            <option name="spWeapon2" value="Melee">Рукопашный</option>
+                        <select name="spWeapon2">
+                            <option value="Range">Дальний</option>
+                            <option value="Close">Ближний</option>
+                            <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 3 раунд</td>
                     <td>
-                        <select>
-                            <option name="spWeapon3" value="Range">Дальний</option>
-                            <option name="spWeapon3" value="Close">Ближний</option>
-                            <option name="spWeapon3" value="Melee">Рукопашный</option>
+                        <select name="spWeapon3">
+                            <option value="Range">Дальний</option>
+                            <option value="Close">Ближний</option>
+                            <option value="Melee">Рукопашный</option>
+                        </select>
                     </td>
-                    </select>
                 </tr>
                 <tr>
                     <td class="stat">Тактика 1 раунд</td>
                     <td>
-                        <select>
-                            <option name="spTactic1" value="Agressive">Агрессия</option>
-                            <option name="spTactic1" value="Careful">Осторожность</option>
-                            <option name="spTactic1" value="Deception">Обман</option>
+                        <select name="spTactic1">
+                            <option value="Aggressive">Агрессия</option>
+                            <option value="Careful">Осторожность</option>
+                            <option value="Deception">Обман</option>
+                        </select>
                     </td>
-                    </select>
                 </tr>
                 <tr>
                     <td class="stat">Тактика 2 раунд</td>
                     <td>
-                        <select>
-                            <option name="spTactic2" value="Agressive">Агрессия</option>
-                            <option name="spTactic2" value="Careful">Осторожность</option>
-                            <option name="spTactic2" value="Deception">Обман</option>
+                        <select name="spTactic2">
+                            <option value="Aggressive">Агрессия</option>
+                            <option value="Careful">Осторожность</option>
+                            <option value="Deception">Обман</option>
+                        </select>
                     </td>
-                    </select>
                 </tr>
                 <tr>
                     <td class="stat">Тактика 3 раунд</td>
                     <td>
-                        <select>
-                            <option name="spTactic3" value="Agressive">Агрессия</option>
-                            <option name="spTactic3" value="Careful">Осторожность</option>
-                            <option name="spTactic3" value="Deception">Обман</option>
+                        <select name="spTactic3">
+                            <option value="Aggressive">Агрессия</option>
+                            <option value="Careful">Осторожность</option>
+                            <option value="Deception">Обман</option>
                         </select>
                     </td>
                 </tr>
@@ -273,7 +273,7 @@
         <!-- Submit area start -->
         <div class="submitArea">
             <div style="float:left; padding:5px">
-                <form method="POST" action="/doIt">
+                <form method="POST" action="/notYet">
                     <input type="submit" value="ОЧИСТИТЬ">
                 </form>
             </div>
@@ -281,7 +281,7 @@
                 <input type="submit" value="ЗАПУСК">
             </div>
             <div style="float:left; padding:5px">
-                <form method="POST" action="/doIt">
+                <form method="POST" action="/notYet">
                     <input type="submit" value="ЭКСПОРТ">
                 </form>
             </div>
