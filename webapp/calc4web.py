@@ -62,29 +62,44 @@ def calculate() -> str:
     first_round_result = get_round_result(first_player,
                                           second_player,
                                           first_player.weapon_1,
-                                          second_player.weapon_1)
+                                          second_player.weapon_1,
+                                          first_player.tactic_1,
+                                          second_player.tactic_1,
+                                          'Раунд 1')
+
     second_round_result = get_round_result(first_player,
                                            second_player,
                                            first_player.weapon_2,
-                                           second_player.weapon_2)
+                                           second_player.weapon_2,
+                                           first_player.tactic_2,
+                                           second_player.tactic_2,
+                                           'Раунд 2')
     third_round_result = get_round_result(first_player,
                                           second_player,
                                           first_player.weapon_3,
-                                          second_player.weapon_3)
+                                          second_player.weapon_3,
+                                          first_player.tactic_3,
+                                          second_player.tactic_3,
+                                          'Раунд 3')
 
-    return first_player + second_player + third_round_result
+    return first_round_result + '<br>' + second_round_result + '<br>' + third_round_result + '<br>'
 
 
-def get_round_result(first_player, second_player, p1_weapon, p2_weapon):
-    p1_damage = damage.get_damage(first_player, second_player, p1_weapon)
-    p2_damage = damage.get_damage(second_player, first_player, p2_weapon)
+def get_round_result(first_player, second_player, p1_weapon, p2_weapon, p1_tactic, p2_tactic, round):
+    p1_damage = damage.get_damage(first_player, second_player, p1_weapon, p1_tactic, p2_tactic)
+    p2_damage = damage.get_damage(second_player, first_player, p2_weapon, p1_tactic, p2_tactic)
 
-    if p1_damage > p2_damage:
-        return '1 player wins'
-    elif p1_damage < p2_damage:
-        return '2 player wins'
-    else:
-        return 'DRAW'
+    first_player.hit_points = first_player.hit_points - p2_damage
+    second_player.hit_points = second_player.hit_points - p1_damage
+
+    result = round + '<br>' + '====================================' + '<br>'
+    result = result + 'Первый игрок: ' + p1_weapon + ' ' + p1_tactic + '<br>'
+    result = result + 'Второй игрок: ' + p2_weapon + ' ' + p2_tactic + '<br>'
+    result = result + 'Первый игрок наносит урон: ' + str(p1_damage) + '<br>'
+    result = result + 'Второй игрок наносит урон: ' + str(p2_damage) + '<br>'
+    result = result + 'Первый игрок хп: ' + str(first_player.hit_points) + '<br>'
+    result = result + 'Второй игрок хп: ' + str(second_player.hit_points) + '<br>'
+    return result
 
 
 if __name__ == '__main__':

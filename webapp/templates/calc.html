@@ -2,68 +2,70 @@
 <html>
 <head>
     <title>Stat Calculator</title>
-    <link rel="stylesheet" href="static/style.css"/>
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <script type="text/javascript" src="static/js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="application/javascript" src="static/js/calculate.js"></script>
     <meta charset="UTF-8"/>
 </head>
 <body>
 <div class="container">
-    <form name="calculateForm" method="POST" action="/calculate">
+    <form id="calculateForm" name="calculateForm" role="form">
         <!-- First player stats -->
         <div class="playerStatColumn">
             <table align="center" style="height:500px">
                 <tr>
                     <td class="stat">Хит пойнтс</td>
-                    <td><input value='0'  name="fpHitPoints" type="number" size="3px"></td>
+                    <td><input value='100' name="fpHitPoints" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Пики</td>
-                    <td><input value='0'  name="fpSpades" type="number" size="3px"></td>
+                    <td><input value='10' name="fpSpades" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Защита</td>
-                    <td><input value='0'  name="fpDefence" type="number" size="3px"></td>
+                    <td><input value='0' name="fpDefence" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний урон</td>
-                    <td><input value='0'  name="fpRangeDamage" type="number" size="3px"></td>
+                    <td><input value='10' name="fpRangeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальние атаки</td>
-                    <td><input value='0'  name="fpRangeAttacks" type="number" size="3px"></td>
+                    <td><input value='1' name="fpRangeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний мод.</td>
-                    <td><input value='0'  name="fpRangeMod" type="number" size="3px"></td>
+                    <td><input value='200' name="fpRangeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний урон</td>
-                    <td><input value='0'  name="fpCloseDamage" type="number" size="3px"></td>
+                    <td><input value='10' name="fpCloseDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближние атаки</td>
-                    <td><input value='0'  name="fpCloseAttacks" type="number" size="3px"></td>
+                    <td><input value='20' name="fpCloseAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний мод.</td>
-                    <td><input value='0'  name="fpCloseMod" type="number" size="3px"></td>
+                    <td><input value='150' name="fpCloseMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный урон</td>
-                    <td><input value='0'  name="fpMeleeDamage" type="number" size="3px"></td>
+                    <td><input value='10' name="fpMeleeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашные атаки</td>
-                    <td><input value='0'  name="fpMeleeAttacks" type="number" size="3px"></td>
+                    <td><input value='4' name="fpMeleeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный мод.</td>
-                    <td><input value='0'  name="fpMeleeMod" type="number" size="3px"></td>
+                    <td><input value='100' name="fpMeleeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 1 раунд</td>
                     <td>
                         <select name="fpWeapon1">
-                            <option value="Range">Дальний</option>
+                            <option value="Range" selected>Дальний</option>
                             <option value="Close">Ближний</option>
                             <option value="Melee">Рукопашный</option>
                         </select>
@@ -74,7 +76,7 @@
                     <td>
                         <select name="fpWeapon2">
                             <option value="Range">Дальний</option>
-                            <option value="Close">Ближний</option>
+                            <option value="Close" selected>Ближний</option>
                             <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
@@ -85,7 +87,7 @@
                         <select name="fpWeapon3">
                             <option value="Range">Дальний</option>
                             <option value="Close">Ближний</option>
-                            <option value="Melee">Рукопашный</option>
+                            <option value="Melee" selected>Рукопашный</option>
                         </select>
                     </td>
 
@@ -106,7 +108,7 @@
                     <td>
                         <select name="fpTactic2">
                             <option value="Aggression">Агрессия</option>
-                            <option value="Careful">Осторожность</option>
+                            <option value="Careful" selected>Осторожность</option>
                             <option value="Deception">Обман</option>
                         </select>
                     </td>
@@ -118,7 +120,7 @@
                         <select name="fpTactic3">
                             <option value="Aggression">Агрессия</option>
                             <option value="Careful">Осторожность</option>
-                            <option value="Deception">Обман</option>
+                            <option value="Deception" selected>Обман</option>
                         </select>
                     </td>
                 </tr>
@@ -127,32 +129,8 @@
         <!-- End first player stats -->
 
         <!-- Fight results -->
-        <div class="resultColumn">
-            All work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play
-            makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll
-            work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes
-            Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work
-            and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a
-            dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no
-            play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull
-            boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play
-            makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll
-            work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes
-            Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work
-            and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a
-            dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no
-            play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull
-            boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play
-            makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll
-            work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes
-            Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work
-            and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a
-            dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no
-            play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull
-            boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play
-            makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll
-            work and no play makes Jack a dull boyAll work and no play makes Jack a dull boyAll work and no play makes
-            Jack a dull boy
+        <div id="resultColumn" class="resultColumn">
+
         </div>
         <!-- End fight results -->
 
@@ -161,51 +139,51 @@
             <table align="center" style="height:500px">
                 <tr>
                     <td class="stat">Хит пойнтс</td>
-                    <td><input value='0'  name="spHitPoints" type="number" size="3px"></td>
+                    <td><input value='100' name="spHitPoints" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Пики</td>
-                    <td><input value='0'  name="spSpades" type="number" size="3px"></td>
+                    <td><input value='10' name="spSpades" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Защита</td>
-                    <td><input value='0'  name="spDefence" type="number" size="3px"></td>
+                    <td><input value='0' name="spDefence" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний урон</td>
-                    <td><input value='0'  name="spRangeDamage" type="number" size="3px"></td>
+                    <td><input value='10' name="spRangeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальние атаки</td>
-                    <td><input value='0'  name="spRangeAttacks" type="number" size="3px"></td>
+                    <td><input value='1' name="spRangeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Дальний мод.</td>
-                    <td><input value='0'  name="spRangeMod" type="number" size="3px"></td>
+                    <td><input value='200' name="spRangeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний урон</td>
-                    <td><input value='0'  name="spCloseDamage" type="number" size="3px"></td>
+                    <td><input value='10' name="spCloseDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближние атаки</td>
-                    <td><input value='0'  name="spCloseAttacks" type="number" size="3px"></td>
+                    <td><input value='2' name="spCloseAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Ближний мод.</td>
-                    <td><input value='0'  name="spCloseMod" type="number" size="3px"></td>
+                    <td><input value='150' name="spCloseMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный урон</td>
-                    <td><input value='0'  name="spMeleeDamage" type="number" size="3px"></td>
+                    <td><input value='10' name="spMeleeDamage" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашные атаки</td>
-                    <td><input value='0'  name="spMeleeAttacks" type="number" size="3px"></td>
+                    <td><input value='4' name="spMeleeAttacks" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Рукопашный мод.</td>
-                    <td><input value='0'  name="spMeleeMod" type="number" size="3px"></td>
+                    <td><input value='100' name="spMeleeMod" type="number" size="3px"></td>
                 </tr>
                 <tr>
                     <td class="stat">Оружие 1 раунд</td>
@@ -222,7 +200,7 @@
                     <td>
                         <select name="spWeapon2">
                             <option value="Range">Дальний</option>
-                            <option value="Close">Ближний</option>
+                            <option value="Close" selected>Ближний</option>
                             <option value="Melee">Рукопашный</option>
                         </select>
                     </td>
@@ -233,7 +211,7 @@
                         <select name="spWeapon3">
                             <option value="Range">Дальний</option>
                             <option value="Close">Ближний</option>
-                            <option value="Melee">Рукопашный</option>
+                            <option value="Melee" selected>Рукопашный</option>
                         </select>
                     </td>
                 </tr>
@@ -252,7 +230,7 @@
                     <td>
                         <select name="spTactic2">
                             <option value="Aggression">Агрессия</option>
-                            <option value="Careful">Осторожность</option>
+                            <option value="Careful" selected>Осторожность</option>
                             <option value="Deception">Обман</option>
                         </select>
                     </td>
@@ -263,7 +241,7 @@
                         <select name="spTactic3">
                             <option value="Aggression">Агрессия</option>
                             <option value="Careful">Осторожность</option>
-                            <option value="Deception">Обман</option>
+                            <option value="Deception" selected>Обман</option>
                         </select>
                     </td>
                 </tr>
@@ -273,17 +251,13 @@
         <!-- Submit area start -->
         <div class="submitArea">
             <div style="float:left; padding:5px">
-                <form method="POST" action="/notYet">
-                    <input type="submit" value="ОЧИСТИТЬ">
-                </form>
+                <button id="clear" type="button" onclick="myClear()">ОЧИСТИТЬ</button>
             </div>
             <div style="float:left; padding:5px">
-                <input type="submit" value="ЗАПУСК">
+                <button id="start" type="button" onclick="myCalculate()">ЗАПУСК</button>
             </div>
             <div style="float:left; padding:5px">
-                <form method="POST" action="/notYet">
-                    <input type="submit" value="ЭКСПОРТ">
-                </form>
+                <button id="export" type="button" onclick="txtExport()">ЭКСПОРТ</button>
             </div>
         </div>
         <!-- Submit area end -->

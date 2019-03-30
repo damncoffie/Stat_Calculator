@@ -2,7 +2,7 @@ from classes.Player import Player
 from tactics import tactics
 
 
-def get_damage(player1: Player, player2: Player, weapon: str):
+def get_damage(player1: Player, player2: Player, weapon: str, p1_tactic: str, p2_tactic: str) -> int:
     """ Урон = Импульс * ( Вид Оружия.Урон * ( Вид Оружия.Модификатор / 100 ) + Пики - Защита врага )
      * Вид Оружия.Атаки"""
     p2_defence = player2.defence
@@ -22,14 +22,12 @@ def get_damage(player1: Player, player2: Player, weapon: str):
         p1_damage = player1.melee_damage
         p1_attacks = player1.melee_attacks
         p1_mod = player1.melee_mod
-    return get_impulse(player1, player2) * (p1_damage * (p1_mod / 100) + p1_spades - p2_defence) * p1_attacks
+    return get_impulse(p1_tactic, p2_tactic) * (p1_damage * (p1_mod / 100) + p1_spades - p2_defence) * p1_attacks
 
 
-def get_impulse(player1: Player, player2: Player):
+def get_impulse(p1_tactic: str, p2_tactic: str) -> int:
     """ Импульс = Своя т.атака - ( Вражеская т.защита ) * ( 1 - свой т.пробой )"""
     # TODO To consider round's tactic, remove 1 round tactic hardcode
-    p1_tactic = player1.tactic_1
-    p2_tactic = player2.tactic_1
     p1_attack = tactics[p1_tactic]['Attack']
     p2_defence = tactics[p2_tactic]['Defence']
     p1_bash = tactics[p1_tactic]['Bash']
